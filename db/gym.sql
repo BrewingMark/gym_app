@@ -6,16 +6,16 @@ DROP TABLE members;
 CREATE TABLE members (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  date_of_birth DATE,
+  age INT,
   membership VARCHAR(255)
 );
 
 CREATE TABLE fitness_classes (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  class_date DATE,
-  start_time TIME,
-  end_time TIME
+  class_day VAR(255),
+  start_time VARCHAR(255),
+  end_time VARCHAR(255)
 );
 
 CREATE TABLE bookings (

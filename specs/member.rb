@@ -7,7 +7,7 @@ class MemberTest < Minitest::Test
 
   def setup()
     @member1 = Member.new({'name' => "Joe Smith",
-                           'date_of_birth' => 22/03/1998,
+                           'age' => 22,
                            'membership' => "Premium"})
   end
 
@@ -16,7 +16,7 @@ class MemberTest < Minitest::Test
   end
 
   def test_member_date_of_birth()
-    assert_equal(22/03/1998, @member1.date_of_birth)
+    assert_equal(22, @member1.age)
   end
 
   def test_member_membership()
