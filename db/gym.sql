@@ -13,7 +13,7 @@ CREATE TABLE members (
 CREATE TABLE fitness_classes (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  class_day VAR(255),
+  class_day VARCHAR(255),
   start_time VARCHAR(255),
   end_time VARCHAR(255)
 );
