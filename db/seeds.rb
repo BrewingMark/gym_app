@@ -14,7 +14,19 @@ member2 = Member.new({
   'age' => 28,
   'membership' => "Standard"
   })
-member2.save()
+# member2.save()
+member3 = Member.new({
+  'name' => "Fraser Taylor",
+  'age' => 29,
+  'membership' => "Standard"
+  })
+# member3.save()
+member4 = Member.new({
+  'name' => "Mike Brewer",
+  'age' => 48,
+  'membership' => "Premium"
+  })
+# member4.save()
 
 
 
