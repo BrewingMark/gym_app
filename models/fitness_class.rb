@@ -22,4 +22,15 @@ class FitnessClass
     @id = results.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM fitness_classes"
+    results = SqlRunner.run(sql)
+    return results. map {|fitness_class| FitnessClass.new(fitness_class)}
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM fitness_classes"
+    SqlRunner.run(sql)
+  end
+
 end

@@ -4,6 +4,7 @@ require_relative( "../models/booking.rb" )
 require("pry-byebug")
 
 Member.delete_all()
+FitnessClass.delete_all()
 
 member1 = Member.new({
   'name' => "Joe Smith",
@@ -41,6 +42,11 @@ fitness_class1 = FitnessClass.new({'name' => "Super Spin",
                    'start_time' => "07:00",
                    'end_time' => "07:45"})
 fitness_class1.save()
+fitness_class2 = FitnessClass.new({'name' => "Super Circuits",
+                   'class_day' => "Tuesday",
+                   'start_time' => "10:00",
+                   'end_time' => "11:00"})
+fitness_class2.save()
 
 
 binding.pry
