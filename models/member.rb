@@ -9,7 +9,7 @@ class Member
     @name = options['name']
     @age =options['age']
     @membership = options['membership']
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
   end
 
   def save()
@@ -23,9 +23,8 @@ class Member
   def update()
     sql = "UPDATE members SET (name, age, membership) = ($1, $2, $3) WHERE id = $4"
     values = [@name, @age, @membership, @id]
-    SqlRunner.run(sql, values)[0]['id'].to_i
+    SqlRunner.run(sql, values)
   end
-  # Works but gets an error Index 0 is out of range.
 
   def delete()
     sql = "DELETE FROM members WHERE id = $1"

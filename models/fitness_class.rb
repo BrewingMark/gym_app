@@ -11,7 +11,7 @@ class FitnessClass
     @class_day = options['class_day']
     @start_time = options['start_time']
     @end_time = options['end_time']
-    @id = options['id']
+    @id = options['id'].to_i if options['id']
   end
 
   def save()
@@ -36,6 +36,13 @@ class FitnessClass
   def delete()
     sql = "DELETE FROM fitness_classes WHERE id = $1"
     values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update()
+    sql = "UPDATE fitness_classes SET (name, class_day, start_time, end_time) =
+          ($1, $2, $3, $4) WHERE id = $5"
+    values = [@name, @class_day, @start_time, @end_time ,@id]
     SqlRunner.run(sql, values)
   end
 
