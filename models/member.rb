@@ -31,4 +31,12 @@ class Member
     SqlRunner.run(sql)
   end
 
+  def self.find(name)
+    sql = "SELECT * FROM members WHERE name = $1"
+    values = [name]
+    members = SqlRunner.run(sql, values)
+    return members.map {|member| Member.new(member)}
+  end
+  # change to search by name returning all members with a perticular name.
+
 end
