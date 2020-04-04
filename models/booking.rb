@@ -6,7 +6,7 @@ class Booking
   attr_reader :id
 
   def initialize(options)
-    @id = options['id']
+    @id = options['id'].to_i if options['id']
     @member_id = options['member_id']
     @fitness_class_id = options['fitness_class_id']
   end
