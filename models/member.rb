@@ -25,6 +25,7 @@ class Member
     values = [@name, @age, @membership, @id]
     SqlRunner.run(sql, values)[0]['id'].to_i
   end
+  # Works but gets an error Index 0 is out of range.
 
   def delete()
     sql = "DELETE FROM members WHERE id = $1"

@@ -36,7 +36,11 @@ member5 = Member.new({
   })
 member5.save()
 
-
+fitness_class1 = FitnessClass.new({'name' => "Super Spin",
+                   'class_day' => "Monday",
+                   'start_time' => "07:00",
+                   'end_time' => "07:45"})
+fitness_class1.save()
 
 
 binding.pry
