@@ -46,4 +46,11 @@ class FitnessClass
     SqlRunner.run(sql, values)
   end
 
+  def self.search_by_name(name)
+    sql = "SELECT * FROM fitness_classes WHERE name = $1"
+    values = [name]
+    results = SqlRunner.run(sql, values)
+    return results.map {|fitness_class| FitnessClass.new(fitness_class)}
+  end
+
 end

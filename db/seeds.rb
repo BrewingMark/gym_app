@@ -47,6 +47,11 @@ fitness_class2 = FitnessClass.new({'name' => "Super Circuits",
                    'start_time' => "10:00",
                    'end_time' => "11:00"})
 fitness_class2.save()
+fitness_class3 = FitnessClass.new({'name' => "Super Spin",
+                   'class_day' => "Friday",
+                   'start_time' => "07:00",
+                   'end_time' => "07:45"})
+fitness_class3.save()
 
 
 binding.pry
