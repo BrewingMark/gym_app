@@ -24,9 +24,21 @@ class Booking
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM bookings"
+    results = SqlRunner.run(sql)
+    return results. map {|booking| Booking.new(booking)}
+  end
+
   def delete()
     sql = "DELETE FROM bookings WHERE id = $1"
     values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update()
+    sql = "UPDATE bookings SET (member_id, fitness_class_id) = ($1, $2) WHERE id = $3"
+    values = [@member_id, @fitness_class_id, @id]
     SqlRunner.run(sql, values)
   end
 
