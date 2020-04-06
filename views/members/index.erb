@@ -1,1 +1,16 @@
 <h1>This should be the members index</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>age</th>
+    <th>membership</th>
+  </tr>
+  <% for member in @members %>
+  <tr>
+    <td><a href="/members/<%= member.id %>"><%= member.name %></a></td>
+    <td><%= member.age %></td>
+    <td><%= member.membership() %></td>
+  </tr>
+  <% end %>
+</table>
