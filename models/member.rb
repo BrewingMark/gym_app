@@ -58,4 +58,13 @@ class Member
     return Member.new( results.first )
   end
 
+  def find_classes()
+    sql = "SELECT fitnessClasses.* FROM fitnessClasses
+          INNER JOIN bookings ON fitness_class_id = fitness_classes.id
+          WHERE bookings.member_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|fitness_class| FitnessClass.new(fitness_class)}
+  end
+
 end
