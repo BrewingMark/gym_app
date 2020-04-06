@@ -24,5 +24,8 @@ post '/members' do
 end
 
 post '/members/:id/delete' do
-  
+  id = params['id'].to_i()
+  member = Member.find(id)
+  member.delete()
+  redirect to ('/members')
 end
