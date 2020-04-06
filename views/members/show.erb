@@ -1,0 +1,24 @@
+<h1><%= @member.name %></h1>
+
+<p><%= @member.age %></p>
+<p><%= @member.membership %></p>
+
+
+<h3>Class Bookings</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Day</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+  </tr>
+  <% for fitness_class in @member.find_classes %>
+  <tr>
+    <td><%= fitness_class.name %></a></td>
+    <td><%= fitness_class.class_day %></td>
+    <td><%= fitness_class.start_time %></td>
+    <td><%= fitness_class.end_time %></td>
+  </tr>
+  <% end %>
+</table>

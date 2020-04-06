@@ -59,7 +59,7 @@ class Member
   end
 
   def find_classes()
-    sql = "SELECT fitnessClasses.* FROM fitnessClasses
+    sql = "SELECT fitness_classes.* FROM fitness_classes
           INNER JOIN bookings ON fitness_class_id = fitness_classes.id
           WHERE bookings.member_id = $1"
     values = [@id]
