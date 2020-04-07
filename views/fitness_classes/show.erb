@@ -4,6 +4,10 @@
 <p>Start time: <%= @fitness_class.start_time%></p>
 <p>End time: <%= @fitness_class.end_time%></p>
 
+<form action="/fitness_classes/<%= @fitness_class.id %>/delete" method="POST">
+<input type="submit" value="delete" />
+</form>
+
 <h3>Members attending</h3>
 
 <table>
