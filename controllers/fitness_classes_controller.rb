@@ -18,6 +18,18 @@ post '/fitness_classes' do
   redirect to("/fitness_classes")
 end
 
+get '/fitness_classes/:id/update' do
+  id = params['id'].to_i
+  @fitness_class = FitnessClass.find(id)
+  erb( :"fitness_classes/update")
+end
+
+post '/fitness_classes/:id' do
+  fitness_class = FitnessClass.new(params)
+  fitness_class.update()
+  redirect to ('/fitness_classes/' + params['id'])
+end
+
 post '/fitness_classes/:id/delete' do
   id = params['id'].to_i()
   FitnessClass.delete(id)

@@ -4,6 +4,8 @@
 <p>Start time: <%= @fitness_class.start_time%></p>
 <p>End time: <%= @fitness_class.end_time%></p>
 
+<a href="/fitness_classes/<%= @fitness_class.id %>/update">Update</a>
+
 <form action="/fitness_classes/<%= @fitness_class.id %>/delete" method="POST">
 <input type="submit" value="delete" />
 </form>
