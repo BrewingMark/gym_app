@@ -3,14 +3,13 @@
 <p><%= @member.age %></p>
 <p><%= @member.membership %></p>
 
+<a href="/members/<%= @member.id %>/update">Update</a>
 
 <form action="/members/<%= @member.id %>/delete" method="POST">
-        <input type="submit" value="delete" />
-
+<input type="submit" value="delete" />
 </form>
 
 <h3>Class Bookings</h3>
-
 <table>
   <tr>
     <th>Name</th>
@@ -20,7 +19,7 @@
   </tr>
   <% for fitness_class in @member.find_classes %>
   <tr>
-    <td><%= fitness_class.name %></a></td>
+    <td><%= fitness_class.name %></td>
     <td><%= fitness_class.class_day %></td>
     <td><%= fitness_class.start_time %></td>
     <td><%= fitness_class.end_time %></td>

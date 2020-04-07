@@ -20,6 +20,18 @@ post '/members/:id/delete' do
   redirect to ('/members')
 end
 
+get '/members/:id/update' do
+  id = params['id'].to_i
+  @member = Member.find(id)
+  erb( :"members/update")
+end
+
+post '/members/:id' do
+  member = Member.new(params)
+  member.update()
+  redirect to ('/members/' + params['id'])
+end
+
 get '/members/:id' do
   @member = Member.find(params['id'].to_i)
   erb( :"members/show")
