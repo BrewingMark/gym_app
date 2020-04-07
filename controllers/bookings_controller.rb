@@ -6,5 +6,6 @@ require_relative('../models/fitness_class')
 also_reload( '../models/*' )
 
 get '/bookings' do
+  @bookings = Booking.all
   erb( :"bookings/index" )
 end

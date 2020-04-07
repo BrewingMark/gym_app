@@ -30,9 +30,9 @@ class Booking
     return results. map {|booking| Booking.new(booking)}
   end
 
-  def delete()
+  def self.delete(id)
     sql = "DELETE FROM bookings WHERE id = $1"
-    values = [@id]
+    values = [id]
     SqlRunner.run(sql, values)
   end
 
@@ -40,6 +40,22 @@ class Booking
     sql = "UPDATE bookings SET (member_id, fitness_class_id) = ($1, $2) WHERE id = $3"
     values = [@member_id, @fitness_class_id, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def member()
+    sql = "SELECT * FROM members
+    WHERE id = $1"
+    values = [@member_id]
+    results = SqlRunner.run( sql, values )
+    return Member.new( results.first )
+  end
+
+  def fitness_class()
+    sql = "SELECT * FROM fitness_classes
+    WHERE id = $1"
+    values = [@fitness_class_id]
+    results = SqlRunner.run( sql, values )
+    return FitnessClass.new( results.first )
   end
 
 end
