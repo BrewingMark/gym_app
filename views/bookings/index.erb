@@ -11,7 +11,7 @@
     <td><%= booking.member.name %></td>
     <td><%= booking.fitness_class.name %></td>
     <td><%= booking.fitness_class.class_day %></td>
-    <td><form action="/booking/<%= booking.id %>/delete" method="post">
+    <td><form action="/bookings/<%= booking.id %>/delete" method="post">
        <input type="submit" value="delete" />
     </form></td>
   </tr>
