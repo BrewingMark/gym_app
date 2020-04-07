@@ -20,6 +20,6 @@ CREATE TABLE fitness_classes (
 
 CREATE TABLE bookings (
   id SERIAL PRIMARY KEY,
-  fitness_class_id  INT REFERENCES fitness_classes(id),
-  member_id INT REFERENCES members(id)
+  fitness_class_id  INT REFERENCES fitness_classes(id) ON DELETE CASCADE,
+  member_id INT REFERENCES members(id) ON DELETE CASCADE
 );
