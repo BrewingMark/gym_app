@@ -1,17 +1,19 @@
 <h1>This should be the bookings index</h1>
 
-<ul>
+<table>
+  <tr>
+    <th>Member</th>
+    <th>Class</th>
+    <th>Day</th>
+  </tr>
   <% for booking in @bookings %>
-  <li>
-  <p><%= booking.member.name %> - <%= booking.fitness_class.name %> -
-     <%= booking.fitness_class.class_day %>
-     <form action="/booking/<%= booking.id %>" method="get">
-        <input type="submit" value="view" />
-     </form>
-     <form action="/booking/<%= booking.id %>" method="get">
-        <input type="submit" value="view" />
-     </form>
-  </p>
-  </li>
+  <tr>
+    <td><%= booking.member.name %></td>
+    <td><%= booking.fitness_class.name %></td>
+    <td><%= booking.fitness_class.class_day %></td>
+    <td><form action="/booking/<%= booking.id %>/delete" method="post">
+       <input type="submit" value="delete" />
+    </form></td>
+  </tr>
   <% end %>
-</ul>
+</table>
