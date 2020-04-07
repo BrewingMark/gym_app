@@ -1,0 +1,24 @@
+<h1>This shoud be a form to create a new booking.</h1>
+
+<form action="/bookings" method="post">
+  <label>
+  Select a member:
+    <select name="member_id">
+      <% for member in @members %>
+      <option value="<%= member.id %>"><%= member.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select a class:
+    <select name="fitness_class_id">
+      <% for fitness_class in @fitness_classes %>
+      <option value="<%= fitness_class.id %>"><%= fitness_class.name %> | <%= fitness_class.class_day%>
+      <%= fitness_class.start_time %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input type='submit' value="Book!">
+</form>

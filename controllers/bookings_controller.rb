@@ -15,3 +15,15 @@ post '/bookings/:id/delete' do
   Booking.delete(id)
   redirect to ('/bookings')
 end
+
+get '/bookings/new' do
+  @members = Member.all
+  @fitness_classes = FitnessClass.all
+  erb( :"bookings/new")
+end
+
+post '/bookings' do
+  booking = Booking.new(params)
+  booking.save
+  redirect to("/bookings")
+end
