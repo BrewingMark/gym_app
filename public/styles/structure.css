@@ -1,0 +1,43 @@
+header {
+  text-align: center;
+  font-family: impact;
+  font-size: 30px;
+  height: 100px;
+  left: 0;
+  top: 0;
+  background-color: #204051;
+  color: black;
+}
+
+nav {
+  height: 100%;
+  width: 150px;
+  position: fixed;
+
+  margin-top: 150;
+  left: 0;
+  background-color: #3b6978;
+}
+
+nav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover {
+  background-color: #84a9ac;
+  color: black;
+}
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  top: 0;
+}
+
+.content {
+  margin-left: 150px;
+  padding-left: 20px;
+}
