@@ -11,3 +11,8 @@ end
 get '/fitness_classes/new' do
   erb( :"/fitness_classes/new")
 end
+
+get '/fitness_classes/:id' do
+  @fitness_class = FitnessClass.find(params['id'].to_i)
+  erb( :"fitness_classes/show")
+end

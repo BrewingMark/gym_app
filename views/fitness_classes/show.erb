@@ -1,0 +1,20 @@
+<h1><%= @fitness_class.name %></h1>
+
+<p>Day: <%= @fitness_class.class_day%></p>
+<p>Start time: <%= @fitness_class.start_time%></p>
+<p>End time: <%= @fitness_class.end_time%></p>
+
+<h3>Members attending</h3>
+
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+  </tr>
+  <% for member in @fitness_class.members_attending %>
+  <tr>
+    <td><%= member.name %></td>
+  </tr>
+  <% end %>
+</table>
