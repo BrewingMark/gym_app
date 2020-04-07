@@ -12,6 +12,12 @@ get '/fitness_classes/new' do
   erb( :"/fitness_classes/new")
 end
 
+post '/fitness_classes' do
+  fitness_class = FitnessClass.new(params)
+  fitness_class.save
+  redirect to("/fitness_classes")
+end
+
 get '/fitness_classes/:id' do
   @fitness_class = FitnessClass.find(params['id'].to_i)
   erb( :"fitness_classes/show")
