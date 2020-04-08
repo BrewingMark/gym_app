@@ -2,20 +2,21 @@ header {
   text-align: center;
   font-family: impact;
   font-size: 30px;
-  height: 150px;
+  height: 125px;
+  width: 100%;
   background-color: #204051;
-  color: black;
+  color: white;
 }
 
 header h1 {
   margin: 0;
+  padding-top: 20px;
 }
 
 nav {
   height: 100%;
   width: 150px;
   position: fixed;
-
   margin-top: 150;
   left: 0;
   background-color: #3b6978;
@@ -43,4 +44,31 @@ body {
 .content {
   margin-left: 150px;
   padding-left: 20px;
+}
+
+header img {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+img {
+  position: absolute;
+  top: 160px;
+  right: 400px;
+}
+
+a:hover {
+  background-color: #84a9ac;
+  color: black;
+}
+
+a {
+  color: black;
+  padding: 8px;
+  text-decoration: none;
+}
+
+form {
+  padding-top: 8px;
 }
